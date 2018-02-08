@@ -26,7 +26,7 @@ const long long maxint=-1u>>1;
 const long long maxlong=maxint*maxint;
 typedef long long lint;
 string ask1,ask2;
-string msg1,msg2;
+string msg1,msg2,msg3;
 long long multi,zyj,wjj;
 int day;
 
@@ -48,6 +48,20 @@ void init()
     wjj=17735227;
     msg1="\x26\x05\x1C\x0F\x4A\x1F\x4A\x58\x5A\x5B\x59\x5B\x5E\x60";
     msg2="\x33\x05\x1F\x18\x4A\x24\x03\x09\x01\x1D\x05\x04\x0D\x14";
+    msg3="  ##  ##   \n ########\n ########\n  ######\n   ####\n    ##";
+}
+
+void think()
+{
+    cout<<"Thinking for a while~"<<endl;
+    int n=40;
+    while(n--)
+    {
+        system("sleep 0.2");
+        cout<<"."<<flush;
+        if (n%20==0) cout<<endl;
+    }
+    cout<<endl;
 }
 
 void input()
@@ -56,15 +70,20 @@ void input()
     cin>>day;
     printf(ask2.c_str(),wjj,day);
     cin>>zyj;
+    think();
 }
 
+#define PINK  "\x1B[95m"
 void output()
 {
     int key1 = multi/day;
     int key2 = zyj;
     msg1=encry(encry(msg1,key1),key2);
     msg2=encry(encry(msg2,key1),key2);
-    cout<<msg1<<msg2<<endl;
+    cout<<PINK;
+    cout<<msg1;
+    cout<<msg3<<endl;
+    cout<<msg2<<endl;
 }
 
 void work()
