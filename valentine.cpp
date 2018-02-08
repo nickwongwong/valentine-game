@@ -26,7 +26,7 @@ const long long maxint=-1u>>1;
 const long long maxlong=maxint*maxint;
 typedef long long lint;
 string ask1,ask2;
-string msg1,msg2,msg3;
+string msg1,msg2,msg3,msg4,bonus;
 long long multi,zyj,wjj;
 int day;
 
@@ -49,6 +49,8 @@ void init()
     msg1="\x26\x05\x1C\x0F\x4A\x1F\x4A\x58\x5A\x5B\x59\x5B\x5E\x60";
     msg2="\x33\x05\x1F\x18\x4A\x24\x03\x09\x01\x1D\x05\x04\x0D\x14";
     msg3="  ##  ##   \n ########\n ########\n  ######\n   ####\n    ##";
+    msg4="Bonus:\n";
+    bonus="\x8F\xE5\xD8\x8E\xD2\xE0\x8C\xF6\xEA\x8F\xCF\xD7\x8D\xF0\xEE\x82\xC5\xC7\x82\xC2\xEA";
 }
 
 void think()
@@ -84,6 +86,8 @@ void output()
     cout<<msg1;
     cout<<msg3<<endl;
     cout<<msg2<<endl;
+    cout<<msg4;
+    cout<<encry(bonus,key1+key2)<<endl;
 }
 
 void work()
