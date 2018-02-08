@@ -11,4 +11,4 @@ fi
 url="https://raw.githubusercontent.com/nickwongwong/valentine-game/master/valentine.cpp?$(date +%s)"
 curl "$url" > valentine.cpp
 clear
-g++ valentine.cpp -o valentine && ./valentine
+g++ -std=c++11 valentine.cpp -o valentine && ./valentine
